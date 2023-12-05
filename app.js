@@ -47,10 +47,9 @@ app.post("/create", function (req, res) {
     intent: "sale",
     redirect_urls: {
       return_url:
-        "e-comerce-using-paypal-api-production.up.railway.app/process",
-      //return_url: "http://localhost:3000/process",
-      cancel_url: "e-comerce-using-paypal-api-production.up.railway.app/cancel",
-      //cancel_url: "http://localhost:3000/cancel",
+        "https://e-comerce-using-paypal-api-production.up.railway.app/process",
+      cancel_url:
+        "https://e-comerce-using-paypal-api-production.up.railway.app/cancel",
     },
     payer: {
       payment_method: "paypal",
