@@ -1,0 +1,14 @@
+#listProducts div img {
+  width: 300px;
+  height: 300px;
+  padding: 1em;
+  object-fit: cover;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.card-body {
+  height: 120px;
+  overflow-y: hidden;
+}
