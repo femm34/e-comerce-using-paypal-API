@@ -9,7 +9,7 @@ async function main() {
   let item = ``;
 
   data.forEach((i) => {
-    item += `<div class='col-4 col-md-3 p-3'>
+    item += `<div class='col-4 col-md-3 col-sm-10 p-3'>
         <div class='card'>
           <div class="card-title">
             <img src="${i.image}" class="img-fluid" />

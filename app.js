@@ -95,9 +95,13 @@ app.get("/process", function (req, res) {
       console.error(error);
     } else {
       if (payment.state == "approved") {
-        res.redirect("/success");
+        res.redirect(
+          "https://e-comerce-using-paypal-api-production.up.railway.app/success"
+        );
       } else {
-        res.redirect("/cancel");
+        res.redirect(
+          "https://e-comerce-using-paypal-api-production.up.railway.app/cancel"
+        );
       }
     }
   });
