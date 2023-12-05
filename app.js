@@ -46,8 +46,11 @@ app.post("/create", function (req, res) {
   var payReq = {
     intent: "sale",
     redirect_urls: {
-      return_url: "http://localhost:3000/process",
-      cancel_url: "http://localhost:3000/cancel",
+      return_url:
+        "e-comerce-using-paypal-api-production.up.railway.app/process",
+      //return_url: "http://localhost:3000/process",
+      cancel_url: "e-comerce-using-paypal-api-production.up.railway.app/cancel",
+      //cancel_url: "http://localhost:3000/cancel",
     },
     payer: {
       payment_method: "paypal",
@@ -67,7 +70,6 @@ app.post("/create", function (req, res) {
     if (error) {
       console.error(error);
     } else {
-      // Capturar enlaces HATEOAS
       var links = {};
       payment.links.forEach(function (linkObj) {
         links[linkObj.rel] = {
@@ -76,7 +78,6 @@ app.post("/create", function (req, res) {
         };
       });
 
-      // Si hay una URL de redirección, redirigir al usuario
       if (links.hasOwnProperty("approval_url")) {
         res.redirect(links["approval_url"].href);
       } else {
@@ -105,6 +106,6 @@ app.get("/process", function (req, res) {
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(PORT, () => {
-  console.log("Servidor en el puerto 3000");
+app.listen(port, () => {
+  console.log(`server listening on port: ${port}`);
 });
