@@ -3,6 +3,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const paypal = require("paypal-rest-sdk");
 const path = require("path");
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -104,6 +105,6 @@ app.get("/process", function (req, res) {
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Servidor en el puerto 3000");
 });
